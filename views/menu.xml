@@ -18,8 +18,10 @@
 
     <menuitem id="menu_patient"
               name="Patient"
+              action="om_hospitall.every_action_and_Record_have_id"
               parent="menu_patient_submenu"
               sequence="0"
     />
     <!--  These are another menu items, as they use each other id in parent section so this is where parents and position are being defined  -->
+    <!--  to Link the menuitem and action we need to given a new tab action as in last menu item im going to give action tabin in it ID os any action will make impact  -->
 </odoo>

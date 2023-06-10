@@ -24,8 +24,9 @@
 
     # always define you xml file here
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/menu.xml',
+        'views/patient_view.xml',
         'views/views.xml',
         'views/templates.xml',
     ],
