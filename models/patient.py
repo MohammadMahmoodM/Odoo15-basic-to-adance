@@ -10,5 +10,6 @@ class HospitalPatient(models.Model):  # this is the way of defining model
     ref = fields.Char(string="Reference")  # a unique id for patient
     age = fields.Integer(string="Age")
     gender = fields.Selection([('male','Male'),('female','Female')], string="Gender")
+    active = fields.Boolean(string="Active", default=False)
 
 
