@@ -65,6 +65,7 @@ While defining multiple filter to workseparatly we can give separate between the
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hospital.patient</field>
         <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_filter_female': 1, ‘search_default_group_by_gender': 1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 This is help of action, of placeholder
@@ -74,6 +75,8 @@ While defining multiple filter to workseparatly we can give separate between the
 </odoo>
 
 
-        <!--Its has a name, further we defined type of action, view mode are many but we select two, there postition matters, is tree is writen first, or form
-        and in field of help its called, any helping words
-        -->
+<!-- <field name="context">{'search_default_filter_female': 1, ‘search_default_group_by_gender': 1}</field>
+we can set default filter or a default group in search bar, mean whenever we open that menu a default filter in search bar stick with that
+
+default filter =>    for that use search_default_ before placing a filter name
+-->

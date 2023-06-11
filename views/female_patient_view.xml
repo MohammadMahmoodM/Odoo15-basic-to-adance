@@ -22,3 +22,12 @@
               sequence="0"
     />
 </odoo>
+
+
+<!--We can set default value of a field using context,
+
+just before writeing a field in context write default_   it will consider as default next give the field name default_gender
+<field  name="context">{'default_gender': 'female', ‘default_age’: 25}</field>
+Note
+
+just before writing a field in context write default_   it will consider as default next give the field name default_gender-->
