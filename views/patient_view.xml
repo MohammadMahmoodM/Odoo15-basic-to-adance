@@ -27,6 +27,11 @@
                         <field name="active"/>
                     </group>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
             </form>
         </field>
     </record>
@@ -47,6 +52,10 @@
                 <group expand="0" string="Group By">
                     <filter string="Gender" name="group_by_gender" context="{'group_by':'gender'}"/>
                 </group>
+
+                <searchpanel>
+                    <field name="gender" enable_counters="1" icon="fa-users"/>
+                </searchpanel>
             </search>
         </field>
     </record>
