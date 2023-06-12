@@ -30,7 +30,6 @@
             </form>
         </field>
     </record>
-    <!--In form view we can give namming convention, as model name so in name just define model name and form or tree etc, and same way id that is understandable-->
 
     <record id="view_hospital_patient_search" model="ir.ui.view">
         <field name="name">hospital.patient.search</field>
@@ -45,38 +44,33 @@
                 <filter name="filter_female" string="Female" domain="[('gender','=', 'female')]"/>
                 <separator/>
                 <filter name="filter_archived" string="Archived" domain="[('active','=', False)]"/>
-<!--                <filter name="filter_name" string="Kids" domain="[('kids','$lt;=','5')]" />-->
                 <group expand="0" string="Group By">
                     <filter string="Gender" name="group_by_gender" context="{'group_by':'gender'}"/>
                 </group>
             </search>
         </field>
     </record>
-    <!--   In search view just give the name of those fields which you want to be accessable in search panel -->
-    <!--   By using filter domain we can search multiple field. -->
-<!--     <filter name="filter_male" string="Male" domain="[('gender','=', 'male')]"/> THis will create default cilter no need
-to type again and again, just click on filter and open it then select this male.
-<separator /> work like or
-While defining multiple filter to workseparatly we can give separate between them or with out <separator /> it can also work
--->
-<!--The method of group by is also shown here, as we can make group of them-->
-    <record id="every_action_and_Record_have_id" model="ir.actions.act_window">
+
+
+    <record id="every_action_and_Record_have_ids" model="ir.actions.act_window">
         <field name="name">Patients</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hospital.patient</field>
         <field name="view_mode">tree,form</field>
-        <field name="context">{'search_default_filter_female': 1, ‘search_default_group_by_gender': 1}</field>
+        <field name="context">{'search_default_filter_female': 1, 'search_default_group_by_gender': 1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 This is help of action, of placeholder
             </p>
         </field>
     </record>
+
+    <menuitem id="menu_patients"
+              name="Patient"
+              action="every_action_and_Record_have_ids"
+              parent="menu_patient_submenu"
+              sequence="0"
+    />
+
+
 </odoo>
-
-
-<!-- <field name="context">{'search_default_filter_female': 1, ‘search_default_group_by_gender': 1}</field>
-we can set default filter or a default group in search bar, mean whenever we open that menu a default filter in search bar stick with that
-
-default filter =>    for that use search_default_ before placing a filter name
--->

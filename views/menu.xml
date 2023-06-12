@@ -3,25 +3,10 @@
     <menuitem id="hospital_root_menu"
               name="Hospital"
               sequence="0"/>
-    <!--Everything has id you give its with revalent name to your work-->
-<!--Name is shown on local host-->
-<!--    The lower the sequence the higher it will shown in on localhost:8015-->
-
-<!--With this it will not appear, on screen, as its not linked with any action, for that go to technical and search for menuitem then in the setting of this "Hospital" menuitem select.-->
-<!--slected ir.actions.act_window then in second option select any previous action id, now refresh it will start showing on screen-->
 
     <menuitem id="menu_patient_submenu"
               name="Patient Details"
               parent="hospital_root_menu"
               sequence="0"
     />
-
-    <menuitem id="menu_patient"
-              name="Patient"
-              action="om_hospitall.every_action_and_Record_have_id"
-              parent="menu_patient_submenu"
-              sequence="0"
-    />
-    <!--  These are another menu items, as they use each other id in parent section so this is where parents and position are being defined  -->
-    <!--  to Link the menuitem and action we need to given a new tab action as in last menu item im going to give action tabin in it ID os any action will make impact  -->
 </odoo>

@@ -11,5 +11,3 @@ class HospitalPatient(models.Model):  # this is the way of defining model
     age = fields.Integer(string="Age")
     gender = fields.Selection([('male','Male'),('female','Female')], string="Gender")
     active = fields.Boolean(string="Active", default=False)
-
-
