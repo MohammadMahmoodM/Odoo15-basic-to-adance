@@ -9,6 +9,8 @@
                 <field name="appointment_time"/>
                 <field name="gender"/>
                 <field name="booking_date"/>
+                <field name="date_of_birth"/>
+                <field name="age"/>
             </tree>
         </field>
     </record>
@@ -24,7 +26,30 @@
                         <field name="appointment_time"/>
                         <field name="gender"/>
                         <field name="booking_date"/>
+                        <field name="date_of_birth"/>
+                        <field name="age"/>
                     </group>
+
+                    <notebook>
+                        <page string="Prescription" name="prescription">
+                            <group>
+                                <field name="gender"/>
+                            </group>
+                        </page>
+                        <page string="Test" name="test">
+                            <group>
+                                <field name="html" placeholder="Enter your description"/>
+                            </group>
+                        </page>
+                    </notebook>
+
+                    <notebook>
+                        <page string="Pharmacy" name="pharmacy">
+                            <group>
+                                <field name="booking_date"/>
+                            </group>
+                        </page>
+                    </notebook>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids"/>
@@ -43,7 +68,6 @@
             </search>
         </field>
     </record>
-
 
 
     <record id="action_hospital_appointment_ids" model="ir.actions.act_window">
