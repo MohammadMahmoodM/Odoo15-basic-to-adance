@@ -4,7 +4,7 @@
         <field name="name">hospital.appointment.tree</field>
         <field name="model">hospital.appointment</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree delete="0" create="0">
                 <field name="patient_id"/>
                 <field name="appointment_time"/>
                 <field name="gender"/>
@@ -20,7 +20,16 @@
         <field name="model">hospital.appointment</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}"
+                           statusbar_visible="drafts,in_consultation,done"/>
+                </header>
                 <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="priority" widget="priority" class="mr-3"/>
+                        </h1>
+                    </div>
                     <group>
                         <field name="patient_id"/>
                         <field name="appointment_time"/>

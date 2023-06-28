@@ -15,6 +15,17 @@ class HospitalPatient(models.Model):  # this is the way of defining model
     date_of_birth = fields.Date(string="Date of Birth")
     age = fields.Integer(string='Age', compute='_calculate_age')
     html = fields.Html(string="HTML")
+    priority = fields.Selection([
+        ('0', 'Normal'),
+        ('1', 'Low'),
+        ('2', 'High'),
+        ('3', 'Very High')], string="Priority")
+
+    state = fields.Selection([
+        ('drafts', 'Draft'),
+        ('in_consultation', 'In Consultation'),
+        ('done', 'Done'),
+        ('cancel', 'Cancel')], string="Status")
 
     @api.constrains('date_of_birth')
     def _calculate_age(self):
