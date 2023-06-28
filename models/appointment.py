@@ -27,6 +27,9 @@ class HospitalPatient(models.Model):  # this is the way of defining model
         ('done', 'Done'),
         ('cancel', 'Cancel')], string="Status")
 
+    def action_test(self):
+        print("test action button....")
+
     @api.constrains('date_of_birth')
     def _calculate_age(self):
         current_date = fields.Date.today()
